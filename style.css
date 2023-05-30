@@ -1,0 +1,81 @@
+:root {
+    --number-of-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    display: flex;
+}
+
+input {
+    width: 40px;
+}
+
+* {
+    border:1px solid red;
+}
+
+#content-wrapper {
+    width: 1200px;
+    margin:0 auto;
+    gap: 0px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* CONTROLS CONTAINER */
+
+#controls-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 24px;
+    gap:24px;
+    width:200px;
+    flex:0 1 auto;
+    min-height: 900px;
+}
+
+.control {
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+/* SKETCHBOX CONTAINER */
+
+#sketchbox-container {
+    flex-direction: column;
+    width: 1000px;
+    flex:0 1 auto;
+    min-height: 900px;
+    padding: 60px 0 0 0;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#grid-container {
+    display: grid;
+    width: 600px;
+    height:600px;
+    grid-template-columns: var(--number-of-columns)
+}
+
+.grid-row {
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    flex-direction:row
+}
+
+.grid-cell {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    border:1px solid blue;
+}
