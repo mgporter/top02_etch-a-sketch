@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: white;
+    background-color: rgb(235, 253, 255);
     margin: 0;
     padding: 0;
 }
@@ -16,6 +16,11 @@ input {
     width: 40px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin:0;
+    padding:0;
+}
+
 * {
     border:1px solid red;
 }
@@ -26,6 +31,7 @@ input {
     gap: 0px;
     flex-direction: row;
     justify-content: center;
+    padding: 24px;
 }
 
 /* CONTROLS CONTAINER */
@@ -33,16 +39,73 @@ input {
 #controls-container {
     flex-direction: column;
     justify-content: flex-start;
-    padding: 24px;
+    padding: 0 24px 24px 24px;
     gap:24px;
-    width:200px;
+    width:250px;
     flex:0 1 auto;
     min-height: 900px;
 }
 
-.control {
+#grid-size-control {
+    padding: 12px;
+    border-radius: 16px;
+    align-items: center;
+    border: 1px solid rgb(132, 132, 132);
+    background-color: rgb(240, 240, 240);
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+#palette-container {
+    flex-direction: column;
+    align-items: center;
+}
+
+#palette {
+    flex-direction: column;
+    width:70%;
+    min-height: 700px;
+    background-image: url(./paint_color_container.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    align-items: center;
+    align-self:flex-end;
+    justify-content: flex-start;
+    filter: drop-shadow(8px 8px 3px #00000077);
+}
+
+.color-circle {
+    background-image: url(./paint_color.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100px;
+    width: 100px;
+    height:100px;
+    margin: 12px 0 0 0;
+    clip-path: circle(70%);
+}
+
+/* red is the default starting color, so we give it the first drop-shadow */
+#red {
+    filter: hue-rotate(310deg) drop-shadow(0 0 12px #ffa37daa);
+}
+
+#yellow {
+    filter: hue-rotate(0deg);
+}
+
+#green {
+    filter: hue-rotate(40deg);
+}
+
+#blue {
+    filter: hue-rotate(160deg);
+}
+
+#palette img {
+    width:150px;
+    height:150px;
 }
 
 
@@ -53,7 +116,7 @@ input {
     width: 1000px;
     flex:0 1 auto;
     min-height: 900px;
-    padding: 60px 0 0 0;
+    padding: 0;
     justify-content: flex-start;
     align-items: center;
 }
@@ -62,14 +125,12 @@ input {
     display: grid;
     width: 600px;
     height:600px;
-    grid-template-columns: var(--number-of-columns)
-}
-
-.grid-row {
-    padding: 0;
-    margin: 0;
-    gap: 0;
-    flex-direction:row
+    grid-template-columns: var(--number-of-columns);
+    padding:36px;
+    border-radius: 72px;
+    border: 20px double rgb(98, 98, 98); 
+    background-color: white;
+    box-shadow: 6px 6px 1px 10px #000000bb;
 }
 
 .grid-cell {
@@ -77,5 +138,6 @@ input {
     padding: 0;
     margin: 0;
     gap: 0;
-    border:1px solid blue;
+    background-color: rgb(255, 255, 255);
+    border:1px solid rgb(226, 226, 226);
 }

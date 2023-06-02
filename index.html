@@ -11,15 +11,19 @@
 <body>
     <div id="content-wrapper">
         <div id="controls-container">
-            <div class="control">
+            <div id="grid-size-control" class="control">
                 <h4>Grid size: </h4>
                 <input type="text" id="grid-size" />
                 <button type="submit" onclick="submitGridSize()">submit</button>
             </div>
-            <div class="control">
-                <h4>Color: </h4>
-                <input type="text" id="color" />
-                <button type="submit" onclick="submitColor()">submit</button>
+            <div id="palette-container" class="control">
+                <!-- <h4 style="text-align: center;">Color:</h4> -->
+                <div id="palette">
+                    <div id="red" data-hue="310" class="color-circle" onclick="setColor('red')"></div>
+                    <div id="yellow" data-hue="0" class="color-circle" onclick="setColor('yellow')"></div>
+                    <div id="green" data-hue="40" class="color-circle" onclick="setColor('green')"></div>
+                    <div id="blue" data-hue="160" class="color-circle" onclick="setColor('blue')"></div>
+                </div>
             </div>
         </div>
         <div id="sketchbox-container">
